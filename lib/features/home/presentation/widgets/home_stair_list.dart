@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:task/features/home/presentation/widgets/stari_widgets.dart';
+import 'package:task/widgets/stari_widgets.dart';
 
 class TestStairs extends StatelessWidget {
   const TestStairs({super.key});

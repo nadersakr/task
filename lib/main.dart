@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/features/home/presentation/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,11 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Center(
- 
-        child: Text("company",style: TextStyle(),),
-      ),
-      
+      body: HomeScreen(),
     );
   }
 }
