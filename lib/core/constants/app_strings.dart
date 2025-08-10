@@ -10,7 +10,8 @@ class AssetsStrings {
 
   // icons
   static const String bikeIcon = "assets/images/svg/Icon_bike.svg";
-  static const String helmetIcon = "assets/images/svg/icon_helmet.svg";
+  static const String iconHelmet = "assets/images/svg/icon_helmet.svg";
   static const String iconRoad = "assets/images/svg/icon_road.svg";
+  static const String iconElectricBox = "assets/images/svg/icon_electric_box.svg";
   static const String iconMountain = "assets/images/svg/icon_mountain.svg";
 }
