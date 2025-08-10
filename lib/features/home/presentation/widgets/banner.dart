@@ -27,7 +27,8 @@ class PromotionalBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final bannerHeight = height ?? screenHeight * BannerConstants.defaultHeightFactor;
+    final bannerHeight =
+        height ?? screenHeight * BannerConstants.defaultHeightFactor;
 
     return ClipPath(
       clipper: SlantedBannerClipper(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task/core/constants/app_colors.dart';
 import 'package:task/core/constants/theme/app_theme.dart';
 import 'package:task/features/home/presentation/screens/home_screen.dart';
 
