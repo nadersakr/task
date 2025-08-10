@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task/core/constants/app_colors.dart';
+import 'package:task/core/constants/theme/app_theme.dart';
 import 'package:task/features/home/presentation/screens/home_screen.dart';
 
 void main() {
@@ -13,18 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-            fontWeight: FontWeight.w700,
-          ),
-          titleMedium: TextStyle(fontSize: 18, color: Colors.white),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
-        fontFamily: 'Poppins', // Set default font family
-      ),
+      theme: AppTheme.appTheme,
       home: const TaskApp(),
     );
   }
