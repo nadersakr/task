@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task/core/constants/app_colors.dart';
 import 'package:task/features/home/presentation/screens/home_screen.dart';
 
 void main() {
@@ -13,9 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+          ),
+          titleMedium: TextStyle(fontSize: 18, color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
         fontFamily: 'Poppins', // Set default font family
       ),
       home: const TaskApp(),
@@ -28,6 +35,6 @@ class TaskApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: AppColors.background, body: HomeScreen());
+    return HomeScreen();
   }
 }
