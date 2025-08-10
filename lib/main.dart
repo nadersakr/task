@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/core/constants/app_colors.dart';
 import 'package:task/features/home/presentation/screens/home_screen.dart';
 
 void main() {
@@ -17,30 +18,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         fontFamily: 'Poppins', // Set default font family
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const TaskApp(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class TaskApp extends StatelessWidget {
+  const TaskApp({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-      ),
-      body: HomeScreen(),
-    );
+    return Scaffold(backgroundColor: AppColors.background, body: HomeScreen());
   }
 }
