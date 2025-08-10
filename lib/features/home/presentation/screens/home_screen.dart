@@ -4,6 +4,7 @@ import 'package:task/core/constants/app_colors.dart';
 import 'package:task/core/constants/app_strings.dart';
 import 'package:task/features/home/presentation/widgets/banner.dart';
 import 'package:task/features/home/presentation/widgets/home_app_bar.dart';
+import 'package:task/features/home/presentation/widgets/product_card.dart';
 import 'package:task/features/home/presentation/widgets/tab_container.dart';
 import 'package:task/widgets/stari_widgets.dart';
 
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   HomeAppBar(),
                   SizedBox(height: 16.0),
                   PromotionalBanner(),
-                  SizedBox(height: 32.0),
+                  SizedBox(height: 24.0),
 
                   StairList(
                     spacing: MediaQuery.of(context).size.width * 0.05,
@@ -66,8 +67,35 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-
-                  // SlantedVerticalContainer(),
+                  SizedBox(height: 16.0),
+                  Expanded(
+                    child: GridView.builder(
+                      padding: EdgeInsets.zero,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        // mainAxisSpacing: 10,
+                        childAspectRatio: 0.65,
+                        crossAxisSpacing: 20,
+                      ),
+                      itemCount: 4, // Adjust this based on your needs
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Expanded(
+                              child: ProductCard(
+                                product: ProductModel(
+                                  title: 'Product $index',
+                                  description: 'Description for Product $index',
+                                  price: 29.99,
+                                  imagePath: AssetsStrings.bike2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -78,4 +106,16 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class ProductModel {
+  String title;
+  String description;
+  double price;
+  String imagePath;
 
+  ProductModel({
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.imagePath,
+  });
+}

@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SlantedVerticalContainer extends StatelessWidget {
-  const SlantedVerticalContainer({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: VerticalSlantClipper(),
-      child: Container(
-        height: 250,
-        width: 180,
-        color: Colors.blue,
-      ),
-    );
-  }
-}
 
 class VerticalSlantClipper extends CustomClipper<Path> {
   @override
@@ -34,8 +20,12 @@ class VerticalSlantClipper extends CustomClipper<Path> {
 
     // Right edge slanted down
     path.lineTo(size.width, size.height - slant - radius);
-    path.quadraticBezierTo(size.width, size.height - slant, size.width - radius,
-        size.height - slant);
+    path.quadraticBezierTo(
+      size.width,
+      size.height - slant,
+      size.width - radius,
+      size.height - slant,
+    );
 
     // Bottom edge to bottom-left with curve
     path.lineTo(radius, size.height);
